@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: radial-gradient(circle at top, #0b1020, #05070f);
+  color: #e5e7eb;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #0f172a;
+  padding: 32px;
+  border-radius: 20px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.modal-content h2 {
+  margin-bottom: 16px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  background: #020617;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #7c3aed, #9333ea);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ===== APP ===== */
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #12172b, #0b1020);
+  padding: 24px;
+}
+
+.logo {
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+
+.player-card {
+  background: rgba(124, 58, 237, 0.15);
+  padding: 14px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+}
+
+.player-card p {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.player-card strong {
+  font-size: 18px;
+}
+
+/* ===== TABS ===== */
+.tab {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 10px;
+  border-radius: 14px;
+  border: none;
+  background: transparent;
+  color: #e5e7eb;
+  cursor: pointer;
+  text-align: left;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+
+.tab:hover {
+  background: #1e293b;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #7c3aed, #9333ea);
+}
+
+/* ===== CONTENT ===== */
+.content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.tab-content {
+  width: 100%;
+  max-width: 900px;
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ===== SCORE ===== */
+.arena-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.score {
+  background: #020617;
+  padding: 18px 38px;
+  border-radius: 22px;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.score.you span {
+  color: #22d3ee;
+}
+
+.score.cpu span {
+  color: #f43f5e;
+}
+
+.score p {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.score span {
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.vs {
+  font-size: 20px;
+  opacity: 0.6;
+}
+
+/* ===== ARENA ===== */
+.arena {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 140px;
+  margin: 55px 0;
+}
+
+.hand {
+  text-align: center;
+}
+
+.hand p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.hand img {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 25px rgba(124, 58, 237, 0.45));
+}
+
+/* ===== CHOICES ===== */
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+
+.choices img {
+  width: 140px;
+}
+
+.choices button {
+  width: 160px;
+  height: 160px;
+  border-radius: 22px;
+  font-size: 18px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #fff;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+
+.choices button:hover {
+  background: #334155;
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.45);
+}
+
+/* ===== RESULT ===== */
+#result {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 17px;
+  opacity: 0.9;
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+}
+
+th,
+td {
+  padding: 14px;
+  border-bottom: 1px solid #1e293b;
+}
+
+th {
+  opacity: 0.7;
+}
+
+/* ===== HIGH SCORE ===== */
+.high-score-text {
+  margin-top: 30px;
+  font-size: 26px;
+  color: #22d3ee;
+}

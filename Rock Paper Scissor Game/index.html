@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>RPS Arena</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAME MODAL -->
+    <div class="modal" id="nameModal">
+      <div class="modal-content">
+        <h2>Enter Your Name</h2>
+        <input type="text" id="modalUsername" placeholder="Your name" />
+        <button onclick="startGame()">START</button>
+      </div>
+    </div>
+
+    <!-- APP -->
+    <div id="mainContent" class="app" style="display: none">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h2 class="logo">⚡ RPS ARENA</h2>
+
+        <div class="player-card">
+          <p>PLAYER</p>
+          <strong id="navUsername"></strong>
+        </div>
+
+        <button class="tab active" onclick="showTab('playTab', this)">
+          ⚔ PLAY
+        </button>
+        <button class="tab" onclick="showTab('historyTab', this)">
+          📜 PLAYER HISTORY
+        </button>
+        <button class="tab" onclick="showTab('highScoreTab', this)">
+          🏆 HIGH SCORE
+        </button>
+      </aside>
+
+      <!-- CONTENT -->
+      <main class="content">
+        <!-- PLAY TAB -->
+        <section id="playTab" class="tab-content active">
+          <div class="arena-score">
+            <div class="score you">
+              <p>YOU</p>
+              <span id="userScore">0</span>
+            </div>
+
+            <span class="vs">VS</span>
+
+            <div class="score cpu">
+              <p>CPU</p>
+              <span id="computerScore">0</span>
+            </div>
+          </div>
+
+          <div class="arena">
+            <div class="hand">
+              <p>You</p>
+              <img id="userImg" src="./assets/rock.png" />
+            </div>
+
+            <div class="hand">
+              <p>CPU</p>
+              <img id="computerImg" src="./assets/rock.png" />
+            </div>
+          </div>
+
+          <div class="choices">
+            <button onclick="playGame('Rock')">
+              <img src="./assets/rock.png" alt="" />
+              <br />ROCK
+            </button>
+            <button onclick="playGame('Paper')">
+              <img src="./assets/paper.png" alt="" />
+              <br />PAPER
+            </button>
+            <button onclick="playGame('Scissors')">
+              <img src="./assets/scissors.png" alt="" />
+              <br />SCISSORS
+            </button>
+          </div>
+
+          <p id="result"></p>
+        </section>
+
+        <!-- HISTORY -->
+        <section id="historyTab" class="tab-content">
+          <h2>Player History</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>You</th>
+                <th>CPU</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody id="historyBody"></tbody>
+          </table>
+        </section>
+
+        <!-- HIGH SCORE -->
+        <section id="highScoreTab" class="tab-content">
+          <h2>High Score</h2>
+          <p class="high-score-text">
+            🔥 Best Score: <strong id="highScore">0</strong>
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
